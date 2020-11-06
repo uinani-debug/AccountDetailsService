@@ -29,9 +29,16 @@ namespace AccountLibrary.API.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
 
-     
+        [Route("health")]
+        [HttpGet]
+        public ActionResult health()
+        {
+            return Ok();
+        }
 
-        [Route("api/v1/getAccountDetails")]
+
+
+        [Route("accountDetailsService/api/v1/getAccountDetails")]
         [HttpGet]
         public ActionResult<AccountDetails> GetAccountDetails(string AccountNumber)
         {
